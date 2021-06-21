@@ -133,29 +133,48 @@ public class Add extends HttpServlet {
                     } else {
                         if(action.equals("Registrar")){
                             String NumPedido = request.getParameter("txtNumPedido");
-                            String Estacion = request.getParameter("txtES");
                             String FechaEntrega = request.getParameter("txtFechaEntrega");
                             String HoraEntrega = request.getParameter("txtHoraEntrega");
                             String NombreOperador = request.getParameter("txtNombreOperador");
-                            String CantidadEntregada = request.getParameter("txtCantidadEntregada");
-                            String Tipo = request.getParameter("txtTipo");
+                            String CantidadEntrada = request.getParameter("txtCantidadEntregada");
                             String Diferencia = request.getParameter("txtDiferencia");
                             String Factura = request.getParameter("txtFactura");
                             String Nota = request.getParameter("txtNota");
                             String Cumplido = request.getParameter("txtCumplido");
                             en.setnumPedido(NumPedido);
-                            en.setes(Estacion);
                             en.setFechaEntrega(FechaEntrega);
                             en.setHoraEntrega(HoraEntrega);
                             en.setNombreOperador(NombreOperador);
-                            en.setCantidadEntregada(CantidadEntregada);
-                            en.setTipo(Tipo);
                             en.setDiferencia(Diferencia);
                             en.setFactura(Factura);
+                            en.setCantidadEntregada(CantidadEntrada);
                             en.setNota(Nota);
                             en.setCumplido(Cumplido);
-                            endao.add(en);
+                            endao.edit(en);
                             request.getRequestDispatcher("Entregas.jsp").forward(request, response);
+                        } else {
+                            if(action.equals("Actualizar Pedido")){
+                                String NumPedido = request.getParameter("txtNumPedido");
+                                String Estacion = request.getParameter("txtES");
+                                String FechaProgramada = request.getParameter("txtFechaProgramada");
+                                String HoraProgramada = request.getParameter("txtHoraProgramada");
+                                String CantidadSolicitada = request.getParameter("txtCantidadSolicitada");
+                                String Tipo = request.getParameter("txtTipo");
+                                String PersonaRequiere = request.getParameter("txtPersonaRequiere");
+                                String PersonaAutoriza = request.getParameter("txtPersonaAutoriza");
+                                String Entregado = request.getParameter("txtEntregado");
+                                cl.setnumPedido(NumPedido);
+                                cl.setes(Estacion);
+                                cl.setFechaProgramada(FechaProgramada);
+                                cl.setHoraProgramada(HoraProgramada);
+                                cl.setcantidadSolicitada(CantidadSolicitada);
+                                cl.setTipo(Tipo);
+                                cl.setPersonaRequiere(PersonaRequiere);
+                                cl.setPersonaAutoriza(PersonaAutoriza);
+                                cl.setEntregado(Entregado);
+                                udao.edit(cl);
+                                request.getRequestDispatcher("Lista.jsp").forward(request, response);
+                            }
                         }
                     } 
                 }

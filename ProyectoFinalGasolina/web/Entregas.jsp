@@ -17,7 +17,6 @@
     </head>
     <body>
         <h1>Entregas</h1>
-        <a href="NuevaEntrega.jsp">Nueva Entrega</a>
         <table border="1" cellpadding="2">
             <thead>
                 <tr>
@@ -32,6 +31,7 @@
                     <th>Factura</th>
                     <th>Nota</th>
                     <th>Cumplido</th>
+                    <th>Acción</th>
                 </tr>
             </thead>
             <%
@@ -55,6 +55,9 @@
                     <td><%=entrega.getFactura()%></td>
                     <td><%=entrega.getNota()%></td>
                     <td><%=entrega.getCumplido()%></td>
+                    <td>
+                        <a href="operar?accion=edit&id=<%= entrega.getNumPedido()%>">Editar</a>
+                    </td>
                 </tr>
                 <%}%>
             </tbody>

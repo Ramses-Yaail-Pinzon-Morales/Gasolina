@@ -75,12 +75,37 @@ public class UsuarioDAO implements CRUD {
 
     @Override
     public boolean edit(Cliente cliente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "UPDATE Pedidos SET ES=?, FechaProgramada=?, HoraProgramada=?, Tipo=?, CantidadSolicitada=?, PersonaRequiere=?, PersonaAutoriza=?, Entregado=? WHERE NumPedido=?";
+        try {
+            con = DB.ConectarDB();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, cliente.getes());
+            ps.setString(2, cliente.getFechaProgramada());
+            ps.setString(3, cliente.getHoraProgramada());
+            ps.setString(4, cliente.getTipo());
+            ps.setString(5, cliente.getcantidadSolicitada());
+            ps.setString(6, cliente.getPersonaRequiere());
+            ps.setString(7, cliente.getPersonaAutoriza());
+            ps.setString(8, cliente.getEntregado());
+            ps.setString(9, cliente.getnumPedido());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error: "+e);
+        }
+        return false;
     }
 
     @Override
     public boolean eliminar(int NumPedido) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "DELETE FROM Pedidos WHERE NumPedido="+NumPedido;
+        try {
+            con = DB.ConectarDB();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error: "+e);
+        }
+        return false;
     }
     
 }

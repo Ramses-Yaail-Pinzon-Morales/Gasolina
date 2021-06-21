@@ -13,9 +13,9 @@ import java.sql.*;
 public class ConexionDB {
     private static Connection conecta;
     private static String driver = "com.mysql.cj.jdbc.Driver";
-    private static String user = "sql5414103";
+    private static String user = "freedbtech_progweb";
     private static String password = "xxPmv2AG8H";
-    private static String url = "jdbc:mysql://sql5.freemysqlhosting.net:3306/sql5414103"+"?useTimezone=true&serverTimezone=UTC";
+    private static String url = "jdbc:mysql://freedb.tech:3306/freedbtech_progweb"+"?useTimezone=true&serverTimezone=UTC";
     
     //Conexión
     public ConexionDB(){
@@ -24,6 +24,7 @@ public class ConexionDB {
             Class.forName(driver);
             conecta = DriverManager.getConnection(url, user, password);
         } catch (Exception e) {
+            System.out.println("Error: "+e);
         }
     }
     public Connection ConectarDB(){

@@ -5,8 +5,10 @@
  */
 package Controlador;
 
+import Modelo.Cliente;
 import Modelo.Estacion;
 import Modelo.EstacionDAO;
+import Modelo.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -34,12 +36,14 @@ public class controlador extends HttpServlet {
     
     Estacion es = new Estacion();
     EstacionDAO dao = new EstacionDAO();
+    Cliente cliente = new Cliente();
+    UsuarioDAO usdao = new UsuarioDAO();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String action = request.getParameter("accion");
-        if(action.equals("Listar")){
+        if(action.equals("Pedidos")){
             request.getRequestDispatcher("Lista.jsp").forward(request, response);
         } else {
             if(action.equals("Listar Cliente")){
@@ -63,6 +67,25 @@ public class controlador extends HttpServlet {
                             } else {
                                 if(action.equals("Venta General")){
                                     request.getRequestDispatcher("VentaGeneral.jsp").forward(request, response);
+                                } else {
+                                    if (action.equals("edit")){
+                                        request.setAttribute("idEnt", request.getParameter("id"));
+                                        request.getRequestDispatcher("NuevaEntrega.jsp").forward(request, response);
+                                    } else{
+                                        if (action.equals("editarR")){
+                                        request.setAttribute("idCliente", request.getParameter("id"));
+                                        request.getRequestDispatcher("ListaEdit.jsp").forward(request, response);
+                                        
+                                        } else {
+                                            if(action.equals("eliminarR")){
+                                                int NumPedido;
+                                                NumPedido = Integer.parseInt(request.getParameter("id"));
+                                                cliente.setNumPedido(NumPedido);
+                                                usdao.eliminar(NumPedido);
+                                                request.getRequestDispatcher("Lista.jsp").forward(request, response);
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }

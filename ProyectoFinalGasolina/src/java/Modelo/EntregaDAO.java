@@ -36,7 +36,7 @@ public class EntregaDAO implements CRUDEntrega{
                 entrega.setFechaEntrega(rs.getString("FechaEntrega"));
                 entrega.setHoraEntrega(rs.getString("HoraEntrega"));
                 entrega.setNombreOperador(rs.getString("NombreOperador"));
-                entrega.setCantidadEntregada(rs.getString("Cantidad Entregada (Netos)"));
+                entrega.setCantidadEntregada(rs.getString("CantidadEntregada"));
                 entrega.setTipo(rs.getString("Tipo"));
                 entrega.setDiferencia(rs.getString("Diferencia"));
                 entrega.setFactura(rs.getString("Factura"));
@@ -81,7 +81,24 @@ public class EntregaDAO implements CRUDEntrega{
 
     @Override
     public boolean edit(Entrega entrega) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "UPDATE Entrega SET FechaEntrega=?, HoraEntrega=?, NombreOperador=?, CantidadEntregada=?, Diferencia=?, Factura=?, Nota=?, Cumplido=? WHERE NumPedido=?";
+        try {
+            con = DB.ConectarDB();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, entrega.getFechaEntrega());
+            ps.setString(2, entrega.getHoraEntrega());
+            ps.setString(3, entrega.getNombreOperador());
+            ps.setString(4, entrega.getCantidadEntregada());
+            ps.setString(5, entrega.getDiferencia());
+            ps.setString(6, entrega.getFactura());
+            ps.setString(7, entrega.getNota());
+            ps.setString(8, entrega.getCumplido());
+            ps.setString(9, entrega.getnumPedido());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error: "+e);
+        }
+        return false;
     }
 
     @Override

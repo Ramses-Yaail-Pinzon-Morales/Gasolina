@@ -6,28 +6,42 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Menú Principal</title>
+        <title>Gasolina México</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="Lista">Listados</div><br>
-        <form action="operar" method="GET">
-            <input type="submit" value="Listar" name="accion"/>
-        </form>
-        <form action="operar" method="GET">
-            <input type="submit" value="Listar Cliente" name="accion"/>
-        </form>
-        <form action="operar" method="GET">
-            <input type="submit" value="Entregas" name="accion"/>
-        </form>
-        <form action="operar" method="GET">
-            <input type="submit" value="Factura" name="accion"/>
-        </form>
-        <form action="operar" method="GET">
-            <input type="submit" value="Venta General" name="accion"/>
-        </form>
-        <a href="Programadores.html">Programadores</a>
+        <div class="container"><br>
+            <nav class="nav-main">
+                <img src="gas.png" alt="Gasolina Logo" class="nav-brand"/>
+                <form action="operar" method="GET">
+                    <input type="submit" value="Pedidos" name="accion" class="btn"/>
+                </form>
+                <form action="operar" method="GET">
+                    <input type="submit" value="Listar Cliente" name="accion" class="btn"/>
+                </form>
+                <form action="operar" method="GET">
+                    <input type="submit" value="Entregas" name="accion" class="btn"/>
+                </form>
+                <form action="operar" method="GET">
+                    <input type="submit" value="Factura" name="accion" class="btn"/>
+                </form>
+                <form action="operar" method="GET">
+                    <input type="submit" value="Venta General" name="accion" class="btn"/>
+                </form>
+            </nav>
+            <header class="showcase">
+                <h2>ELABORADO POR:</h2>
+                <p>López Salazar Abraham</p>
+                <p>Pinzón Morales Ramsés Yaail</p>
+                <p>Tecante Martinez Katia Mariana</p>        
+            </header>
+        </div>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="main.js"></script>
     </body>
 </html>

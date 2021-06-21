@@ -14,10 +14,7 @@
     <body>
         <h1>Entregas</h1>
         <form action="agregar" method="POST">
-            <label>Numero de Pedido: </label>
-            <input type="text" name="txtNumPedido"/>
-            <label>Estación: </label>
-            <input type="text" name="txtES"/>
+            <input type="hidden" name="txtNumPedido" value="${idEnt}"/>
             <label>Fecha de Entrega: </label>
             <input type="date" name="txtFechaEntrega"/>
             <label>Hora Entrega: </label>
@@ -26,8 +23,6 @@
             <input type="text" name="txtNombreOperador"/>
             <label>Cantidad Entregada: </label>
             <input type="text" name="txtCantidadEntregada"/>
-            <label>Tipo: </label>
-            <input type="text" name="txtTipo"/>
             <label>Diferencia: </label>
             <input type="text" name="txtDiferencia"/>
             <label>Factura: </label>

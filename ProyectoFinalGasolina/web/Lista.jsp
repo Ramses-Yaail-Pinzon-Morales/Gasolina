@@ -13,12 +13,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Lista de clientes</title>
+        <link href="StylesPedidos.css" rel="stylesheet" type="text/css"/>
+        <title>Lista de Pedidos</title>
     </head>
     <body>
-        <h1>Clientes</h1>
-        <a href="NuevoPedido.jsp">Programar Pedido</a>
-        <table border="1" cellpadding="2">
+        <h1>Pedidos</h1>
+        <a href="NuevoPedido.jsp">Nuevo Pedido</a><br><br>
+        <table border="3" cellpadding="2" class="table">
             <thead>
                 <tr>
                     <th>No. Pedido</th>
@@ -30,6 +31,7 @@
                     <th>Persona Requiere</th>
                     <th>Persona Autoriza</th>
                     <th>Entregado</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <%
@@ -52,6 +54,10 @@
                     <td><%= cliente.getPersonaRequiere()%></td>
                     <td><%= cliente.getPersonaAutoriza()%></td>
                     <td><%= cliente.getEntregado()%></td>
+                    <td>
+                        <a href="operar?accion=editarR&id=<%= cliente.getNumPedido()%>">Editar</a>
+                        <a href="operar?accion=eliminarR&id=<%= cliente.getNumPedido()%>">Eliminar</a>
+                    </td>
                 </tr>
                 <%}%>
             </tbody>
