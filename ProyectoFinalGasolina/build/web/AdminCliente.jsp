@@ -13,11 +13,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="styles.css" rel="stylesheet" type="text/css"/>
+        <link href="StylesPedidos.css" rel="stylesheet" type="text/css"/>
         <title>Clientes</title>
     </head>
     <body>
         <h1>Clientes de la Gasolinería</h1><br>
-        <a href="AgregarCliente.jsp">Nuevo Registro</a>
+        <a href="AgregarCliente.jsp">Nuevo Registro</a><a href="index.html" style="float: right"> Menú Principal</a>
         <br><br>
         <table border="2" cellpadding="3">
             <thead>

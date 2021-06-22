@@ -14,6 +14,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="styles.css" rel="stylesheet" type="text/css"/>
+        <link href="StylesPedidos.css" rel="stylesheet" type="text/css"/>
         <script>
             
             var fecha = new Date();
@@ -26,6 +28,7 @@
     </head>
     <body>
         <h1>Venta General</h1>
+        <a href="index.html"> Menú Principal</a><br><br>
         <table border="1" cellpadding="2">
             <thead>
                 <tr>

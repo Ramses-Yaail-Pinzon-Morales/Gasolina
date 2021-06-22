@@ -9,31 +9,37 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="styles.css" rel="stylesheet" type="text/css"/>
+        <link href="StylesPedidos.css" rel="stylesheet" type="text/css"/>
         <title>Nuevo Cliente</title>
     </head>
     <body>
         <div>
-            <h1>Ingresar un Nuevo cliente</h1>
+            <div style="position: absolute">
+                <h1>Ingresar un Nuevo cliente</h1>
+            </div>
             <br>
-            <form action="agregar" method="POST">
-                <label>Estación:</label>
-                <input type="text" name="txtEstacion"/>
-                <label>Correo:</label>
-                <input type="text" name="txtCorreo"/>
-                <label>Encargado:</label>
-                <input type="text" name="txtEncargado"/>
-                <label>Teléfono:</label>
-                <input type="text" name="txtTelefono"/>
-                <label>Nombre:</label>
-                <input type="text" name="txtNombre"/><br>
-                <label>Nombre de la Estación:</label>
-                <input type="text" name="txtNEstacion"/>
-                <label>Dirección:</label>
-                <input type="text" name="txtDireccion"/>
-                <input type="submit" name="accion" value="Guardar"/>
-                <br><br>
-                <a href="AdminCliente.jsp">Lista de Clientes</a>
-            </form>
+            <div class="login-box" style="margin-top: 100px;">
+                <form action="agregar" method="POST">
+                    <label>Estación:</label>
+                    <input type="text" name="txtEstacion"/>
+                    <label>Correo:</label>
+                    <input type="text" name="txtCorreo"/>
+                    <label>Encargado:</label>
+                    <input type="text" name="txtEncargado"/>
+                    <label>Teléfono:</label>
+                    <input type="text" name="txtTelefono"/>
+                    <label>Nombre:</label>
+                    <input type="text" name="txtNombre"/><br>
+                    <label>Nombre de la Estación:</label>
+                    <input type="text" name="txtNEstacion"/>
+                    <label>Dirección:</label>
+                    <input type="text" name="txtDireccion"/>
+                    <input type="submit" name="accion" value="Guardar"/>
+                    <br><br>
+                    <a href="AdminCliente.jsp">Lista de Clientes</a>
+                </form>
+            </div>
         </div>
         
     </body>

@@ -9,30 +9,34 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="styles.css" rel="stylesheet" type="text/css"/>
+        <link href="StylesPedidos.css" rel="stylesheet" type="text/css"/>
         <title>Editar Pedido</title>
     </head>
     <body>
         <h1>Editar Pedido</h1>
-        <form action="agregar" method="POST">
-            <labe>Número del Pedido: </labe>
-            <input type="text" name="txtNumPedido" value="${idCliente}"/>
-            <label>Estación: </label>
-            <input type="text" name="txtES"/>
-            <label>Fecha Programada: </label>
-            <input type="date" name="txtFechaProgramada"/>
-            <label>Hora Programada: </label>
-            <input type="time" name="txtHoraProgramada"/>
-            <label>Cantidad Solicitada: </label>
-            <input type="text" name="txtCantidadSolicitada"/>
-            <label>Tipo: </label>
-            <input type="text" name="txtTipo"/>
-            <label>Persona que lo Requiere: </label>
-            <input type="text" name="txtPersonaRequiere"/>
-            <label>Persona que lo Autoriza: </label>
-            <input type="text" name="txtPersonaAutoriza"/>
-            <label>Entregado: </label>
-            <input type="text" name="txtEntregado"/>
-            <input type="submit" value="Actualizar Pedido" name="accion"/>
-        </form>
+        <div class="login-box" style="height: 110%">
+            <form action="agregar" method="POST">
+                <labe>Número del Pedido: </labe>
+                <input type="text" name="txtNumPedido" value="${idCliente}"/>
+                <label>Estación: </label>
+                <input type="text" name="txtES"/>
+                <label>Fecha Programada: </label>
+                <input type="date" name="txtFechaProgramada"/>
+                <label>Hora Programada: </label>
+                <input type="time" name="txtHoraProgramada"/>
+                <label>Cantidad Solicitada: </label>
+                <input type="text" name="txtCantidadSolicitada"/>
+                <label>Tipo: </label>
+                <input type="text" name="txtTipo"/>
+                <label>Persona que lo Requiere: </label>
+                <input type="text" name="txtPersonaRequiere"/>
+                <label>Persona que lo Autoriza: </label>
+                <input type="text" name="txtPersonaAutoriza"/>
+                <label>Entregado: </label>
+                <input type="text" name="txtEntregado"/>
+                <input type="submit" value="Actualizar Pedido" name="accion"/>
+            </form>
+        </div>
     </body>
 </html>

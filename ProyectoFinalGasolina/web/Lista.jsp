@@ -18,7 +18,7 @@
     </head>
     <body>
         <h1>Pedidos</h1>
-        <a href="NuevoPedido.jsp">Nuevo Pedido</a><br><br>
+        <a href="NuevoPedido.jsp">Nuevo Pedido</a><a href="index.html" style="float: right"> Menú Principal</a><br><br>
         <table border="3" cellpadding="2" class="table">
             <thead>
                 <tr>
@@ -55,8 +55,8 @@
                     <td><%= cliente.getPersonaAutoriza()%></td>
                     <td><%= cliente.getEntregado()%></td>
                     <td>
-                        <a href="operar?accion=editarR&id=<%= cliente.getNumPedido()%>">Editar</a>
-                        <a href="operar?accion=eliminarR&id=<%= cliente.getNumPedido()%>">Eliminar</a>
+                        <a class="do" href="operar?accion=editarR&id=<%= cliente.getNumPedido()%>">Editar</a>
+                        <a class="do" href="operar?accion=eliminarR&id=<%= cliente.getNumPedido()%>">Eliminar</a>
                     </td>
                 </tr>
                 <%}%>

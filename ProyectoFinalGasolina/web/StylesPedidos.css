@@ -14,7 +14,7 @@
 }
 .login-box{
   width: 500px;
-  height: 615px;
+  height: 655px;
   background: #000;
   color:rgb(2, 248, 113);
   top: 50%;
@@ -59,8 +59,29 @@
     color: #000;
     font-size: 18px;
     border-radius: 20px;
+    padding: 0;
   }  
   
   .table{
       border-color: white;
+  }
+  
+  .do{
+      font-size: 15px;
+  }
+  
+  a:link, a:active, a:visited{
+      color: lightseagreen;
+      background-color: transparent;
+      text-decoration: none;
+      background-color: black;
+      padding: 5px;
+  }
+  
+  a:hover{
+      color: white;
+      background-color: transparent;
+      text-decoration: none;
+      background-color: black;
+      padding: 5px;
   }

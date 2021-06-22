@@ -9,11 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="styles.css" rel="stylesheet" type="text/css"/>
+        <link href="StylesPedidos.css" rel="stylesheet" type="text/css"/>
         <title>Editar Cliente</title>
     </head>
     <body>
         <h1>Cambiar Datos del Cliente</h1>
-        <form action="agregar" method="POST">
+        <div class="login-box" style="margin-top: 100px;">
+            <form action="agregar" method="POST">
                 <label>Estación:</label>
                 <input type="text" name="txtEstacion" value=""/>
                 <label>Correo:</label>
@@ -32,5 +35,6 @@
                 <br><br>
                 <a href="AdminCliente.jsp">Lista de Clientes</a>
             </form>
+        </div>
     </body>
 </html>
